@@ -3,14 +3,13 @@ from flask import Flask, request, redirect
 from flask import Flask, render_template_string
 import pygsheets
 import json
-# import pandas 
 import datetime
 
 app = Flask(__name__)
 
 """
+git bash:
 git remote add origin https://github.com/pedroccpimenta/RestUPubPriv.git
-
 
 """
 
@@ -42,7 +41,7 @@ desc={
     'page1':f'<h1>Críticas a restaurantes</h1>{disclaimer}<br>A tabela seguinte mostra alguns dados dos restaurantes com as críticas recebidas:<br>',
 }
 
-agora = str(datetime.datetime.now)[0:19]
+agora = str(datetime.datetime.now())[0:19]
 bottomline = f"<hr color=green><small><i>{agora} <i>(ppimenta [at] umaia [dot] pt)"
 
 gc = pygsheets.authorize(service_file=servfile)
