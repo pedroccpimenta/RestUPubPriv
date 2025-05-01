@@ -29,7 +29,7 @@ with open(servfile, 'r') as fh:
     LOGIN_KEYWORD = json.loads(fh.read())['private_key']
 
 
-titleico="<title>Landing page - Restaurantes</title><link rel='icon' type='image/png' href='./pics/Gemini_Generated_Image_7bex9w7bex9w7bex.png'>"
+titleico="<title>Landing page - Restaurantes</title><link rel='icon' type='image/png' href='https://github.com/pedroccpimenta/RestUPubPriv/blob/master/pics/Gemini_Generated_Image_7bex9w7bex9w7bex.png'>"
 bodyfont='<body style="font-family: Roboto, sans-serif;">'
 
 disclaimer="<table border=1 bgcolor=orange style='width:100%' cellspacing=0><tr><td>Os dados apresentados são fictícios e utilizados em contexto de ensino. Qualquer semelhança com a realidade é acidental e desprovida de intencionalidade.</table>"
@@ -44,7 +44,6 @@ bottomline = f"<hr color=green><small><i>{agora} <i>(ppimenta [at] umaia [dot] p
 
 gc = pygsheets.authorize(service_file=servfile)
 keyword=""
-
 
 @app.route("/", methods=["GET", "POST"])
 def page0():
@@ -172,7 +171,7 @@ def pag1():
         lc +="</ul>"
 
         if ncs==0:
-            tabela += "<td> (sem críticas) "
+            tabela += "<td> (sem críticas)"
         else:
             tabela += f"<td>{lc}média das críticas:{tots/ncs:.1f}<small> ⭐</small></td>"
 
