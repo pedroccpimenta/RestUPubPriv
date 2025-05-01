@@ -70,8 +70,6 @@ def page0():
     print('len(linhas):', len(linhas))
 
     nl=0
-    #for linha in linhas:
-    #    print ("$",linhas[nl][1], "$")
     while len(linhas[nl])>0:
         tabela += '<tr>'
         for celula in linhas[nl]:
@@ -82,8 +80,6 @@ def page0():
     tabela += '</table>'
     print(tabela)
 
-
-    print (request.method)
     if request.method == "POST":
 
         keyword = request.form.get("keyword", "").strip().lower()
@@ -111,7 +107,6 @@ def page0():
     return f'''
         <!doctype html>{titleico}
         {bodyfont}{desc['landing']}<center>{tabela}</center>
-        <center>
         <center>
         Para exemplo de como mapear estes dados, veja este <a href='https://colab.research.google.com/drive/1dKWR_aafquIL6_noIBheAl63O5e-RrIk' target='*'>Jupyter notebook</a>.
         </center>
