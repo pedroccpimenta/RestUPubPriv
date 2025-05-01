@@ -40,7 +40,7 @@ desc={
 }
 
 agora = str(datetime.datetime.now())[0:19]
-bottomline = f"<hr color=green><small><i>{agora} <i>(ppimenta [at] umaia [dot] pt)</i> | check at (<a href='{othu}' target='*'>{othu}</a>.)"
+bottomline = f"<hr color=green><small><i>{agora} <i>(ppimenta [at] umaia [dot] pt)</i> | check at (<a href='{othu}' target='*'>{othu}</a>)."
 
 gc = pygsheets.authorize(service_file=servfile)
 keyword=""
