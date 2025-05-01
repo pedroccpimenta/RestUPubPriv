@@ -22,9 +22,9 @@ Data is edited in a google sheet - [Críticas-Restaurantes googlesheet](https://
 The code for a flask application is maintained in this repository [https://github.com/pedroccpimenta/RestUPubPriv @ github](https://github.com/pedroccpimenta/RestUPubPriv), and deployed through [render](render.com) at [https://restupubpriv.onrender.com/](https://restupubpriv.onrender.com/)
 
 
-![screenshot](./pics/....png)
+![screenshot](./pics/screencapture-127-0-0-1-5000-landing.png)
 
 
-![screenshot2](./pics/....png)
+![screenshot2](./pics/screencapture-127-0-0-1-5000-page1.png)
 
-PP, May 2025
+PP, May 1st, 2025
