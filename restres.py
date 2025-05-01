@@ -42,7 +42,7 @@ desc={
 }
 
 agora = str(datetime.datetime.now())[0:19]
-bottomline = f"<hr color=green><small><i>{agora} <i>(ppimenta [at] umaia [dot] pt)</i> | (check <a href='{othu}' target='*'>{othu}</a>)"
+bottomline = f"<hr color=green><small><i>{agora} | code available at <a href='https://github.com/pedroccpimenta/RestUPubPriv' target='*'>https://github.com/pedroccpimenta/RestUPubPriv</a> | <i>(ppimenta [at] umaia [dot] pt)</i> | (check <a href='{othu}' target='*'>{othu}</a>)"
 
 gc = pygsheets.authorize(service_file=servfile)
 keyword=""
