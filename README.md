@@ -22,9 +22,11 @@ Data is edited in a google sheet - [Críticas-Restaurantes googlesheet](https://
 The code for a flask application is maintained in this repository [https://github.com/pedroccpimenta/RestUPubPriv @ github](https://github.com/pedroccpimenta/RestUPubPriv), and deployed through [render](render.com) at [https://restupubpriv.onrender.com/](https://restupubpriv.onrender.com/)
 
 
+
+The screenshot below displays the landing page, presenting public restaurant data in a structured table format.
 ![screenshot](./pics/screencapture-127-0-0-1-5000-landing.png)
 
-
+The image below offers a partial overview of the reviews, grouped by restaurant. The table highlights the average rating for each establishment.
 ![screenshot2](./pics/screencapture-127-0-0-1-5000-page1.png)
 
 PP, May 1st, 2025
