@@ -8,7 +8,11 @@ import datetime
 
 app = Flask(__name__)
 
+"""
+git remote add origin https://github.com/pedroccpimenta/RestUPubPriv.git
 
+
+"""
 
 import socket
 hostname=socket.gethostname()
@@ -48,8 +52,6 @@ keyword=""
 @app.route("/", methods=["GET", "POST"])
 def page0():
     global keyword
-
-    #gc = pygsheets.authorize(key ='AIzaSyCBGIf-sgJmKRsotHlIJeuDRTgsMghxA7I')
 
     sh = gc.open('Críticas-Restaurantes')
     wks = sh.worksheet_by_title('Restaurante')
