@@ -100,13 +100,7 @@ def page0():
                 <title>Landing page - Restaurantes</title>
                 {bodyfont}{desc['landing']}<center>{tabela}</center>
                 <center>
-                Para exemplo de como mapear estes dados, veja:
-
-                <iframe src="https://colab.research.google.com/drive/1dKWR_aafquIL6_noIBheAl63O5e-RrIk?usp=sharing" 
-                    width="100%" 
-                    height="600" 
-                    style="border: none;">
-                </iframe>
+                Para exemplo de como mapear estes dados, veja este <a href='https://colab.research.google.com/drive/1dKWR_aafquIL6_noIBheAl63O5e-RrIk' target='*'>Jupyter notebook</a>.
                 </center>
 
                 <form method="post">
@@ -121,13 +115,8 @@ def page0():
         <!doctype html>{titleico}
         {bodyfont}{desc['landing']}<center>{tabela}</center>
         <center>
-        Para exemplo de como mapear estes dados, veja:
-
-        <iframe src="https://colab.research.google.com/drive/1dKWR_aafquIL6_noIBheAl63O5e-RrIk?usp=sharing" 
-            width="100%" 
-            height="600" 
-            style="border: none;">
-        </iframe>
+        <center>
+        Para exemplo de como mapear estes dados, veja este <a href='https://colab.research.google.com/drive/1dKWR_aafquIL6_noIBheAl63O5e-RrIk' target='*'>Jupyter notebook</a>.
         </center>
 
         <form method="post">
