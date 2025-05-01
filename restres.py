@@ -30,7 +30,7 @@ with open(servfile, 'r') as fh:
     LOGIN_KEYWORD = json.loads(fh.read())['private_key']
 
 
-titleico="<title>Landing page - Restaurantes</title><link rel='icon' type='image/png' href='https://github.com/pedroccpimenta/RestUPubPriv/blob/master/pics/Gemini_Generated_Image_7bex9w7bex9w7bex.png'>"
+titleico="<title>Landing page - Restaurantes</title><link rel='icon' type='image/png' href='https://raw.githubusercontent.com/pedroccpimenta/RestUPubPriv/refs/heads/master/pics/Gemini_Generated_Image_7bex9w7bex9w7bex.png'>"
                                                                                             
 bodyfont='<body style="font-family: Roboto, sans-serif;">'
 
