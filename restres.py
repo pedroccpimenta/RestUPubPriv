@@ -18,14 +18,12 @@ hostname=socket.gethostname()
 print ("hostname:", hostname)
 
 if (hostname=="DESKTOP-O5TUSN4" or hostname=='TP16G2-PCP') :
-    servfile='./secrets/d4maia-gcells2mysql-062d106bc40f.json'
     servfile='./secrets/pcp-prof-0ca0856baee5.json'
-    othu='https://staleciurlac.onrender.com/'
+    othu='https://restupubpriv.onrender.com/'
 
 else:
-    servfile='/etc/secrets/d4maia-gcells2mysql-062d106bc40f.json'
     servfile='/etc/secrets/pcp-prof-0ca0856baee5.json'
-    othu='http://127.0.0.1/'
+    othu='http://127.0.0.1/5000'
 
 with open(servfile, 'r') as fh:
     LOGIN_KEYWORD = json.loads(fh.read())['private_key']
@@ -42,7 +40,7 @@ desc={
 }
 
 agora = str(datetime.datetime.now())[0:19]
-bottomline = f"<hr color=green><small><i>{agora} <i>(ppimenta [at] umaia [dot] pt)"
+bottomline = f"<hr color=green><small><i>{agora} <i>(ppimenta [at] umaia [dot] pt)</i> | check at (<a href='{othu}' target='*'></a>.)"
 
 gc = pygsheets.authorize(service_file=servfile)
 keyword=""
