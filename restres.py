@@ -3,15 +3,16 @@ from flask import Flask, request, redirect
 from flask import Flask, render_template_string
 import pygsheets
 import json
+# import pandas 
 import datetime
 
 app = Flask(__name__)
 
 """
-git bash:
 git remote add origin https://github.com/pedroccpimenta/RestUPubPriv.git
 
-""" 
+
+"""
 
 import socket
 hostname=socket.gethostname()
@@ -29,7 +30,7 @@ with open(servfile, 'r') as fh:
     LOGIN_KEYWORD = json.loads(fh.read())['private_key']
 
 
-titleico="<title>Landing page - Restaurantes</title><link rel='icon' type='image/png' href='https://github.com/pedroccpimenta/RestUPubPriv/blob/master/pics/Gemini_Generated_Image_7bex9w7bex9w7bex.png'>"
+titleico="<title>Landing page - Restaurantes</title><link rel='icon' type='image/png' href='./pics/Gemini_Generated_Image_7bex9w7bex9w7bex.png'>"
 bodyfont='<body style="font-family: Roboto, sans-serif;">'
 
 disclaimer="<table border=1 bgcolor=orange style='width:100%' cellspacing=0><tr><td>Os dados apresentados são fictícios e utilizados em contexto de ensino. Qualquer semelhança com a realidade é acidental e desprovida de intencionalidade.</table>"
@@ -40,14 +41,17 @@ desc={
 }
 
 agora = str(datetime.datetime.now())[0:19]
-bottomline = f"<hr color=green><small><i>{agora} <i>(ppimenta [at] umaia [dot] pt)</i> | check at (<a href='{othu}' target='*'>{othu}</a>)."
+bottomline = f"<hr color=green><small><i>{agora} <i>(ppimenta [at] umaia [dot] pt)</i> | (check <a href='{othu}' target='*'>{othu}</a>)"
 
 gc = pygsheets.authorize(service_file=servfile)
 keyword=""
 
+
 @app.route("/", methods=["GET", "POST"])
 def page0():
     global keyword
+
+    #gc = pygsheets.authorize(key ='AIzaSyCBGIf-sgJmKRsotHlIJeuDRTgsMghxA7I')
 
     sh = gc.open('Críticas-Restaurantes')
     wks = sh.worksheet_by_title('Restaurante')
@@ -69,6 +73,7 @@ def page0():
     print('len(linhas):', len(linhas))
 
     nl=0
+
     while len(linhas[nl])>0:
         tabela += '<tr>'
         for celula in linhas[nl]:
@@ -78,6 +83,7 @@ def page0():
 
     tabela += '</table>'
     print(tabela)
+
 
     if request.method == "POST":
 
@@ -92,7 +98,7 @@ def page0():
                 <title>Landing page - Restaurantes</title>
                 {bodyfont}{desc['landing']}<center>{tabela}</center>
                 <center>
-                Para um exemplo de como mapear dados análogos a estes, veja este <a href='https://colab.research.google.com/drive/1dKWR_aafquIL6_noIBheAl63O5e-RrIk' target='*'>Jupyter notebook</a>.
+                Para um exemplo de como mapear dados análogos, veja este <a href='https://colab.research.google.com/drive/1dKWR_aafquIL6_noIBheAl63O5e-RrIk' target='*'>Jupyter notebook</a>.
                 </center>
 
                 <form method="post">
@@ -107,7 +113,7 @@ def page0():
         <!doctype html>{titleico}
         {bodyfont}{desc['landing']}<center>{tabela}</center>
         <center>
-                Para um exemplo de como mapear dados análogos a estes, veja este <a href='https://colab.research.google.com/drive/1dKWR_aafquIL6_noIBheAl63O5e-RrIk' target='*'>Jupyter notebook</a>.
+        Para um exemplo de como mapear dados análogos, veja este <a href='https://colab.research.google.com/drive/1dKWR_aafquIL6_noIBheAl63O5e-RrIk' target='*'>Jupyter notebook</a>.
         </center>
 
         <form method="post">
@@ -117,15 +123,6 @@ def page0():
         {bottomline}</body>
         </html>
     '''
-
-"""
-    return render_template_string('''
-        <h2>Dados da Planilha</h2>
-        {{ tabela|safe }}
-    ''', tabela=tabela)
-"""
-
-
 
 @app.route("/page1")
 def pag1():
@@ -171,7 +168,7 @@ def pag1():
         lc +="</ul>"
 
         if ncs==0:
-            tabela += "<td> (sem críticas)"
+            tabela += "<td> (sem críticas) "
         else:
             tabela += f"<td>{lc}média das críticas:{tots/ncs:.1f}<small> ⭐</small></td>"
 
