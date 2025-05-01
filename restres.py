@@ -23,7 +23,7 @@ if (hostname=="DESKTOP-O5TUSN4" or hostname=='TP16G2-PCP') :
 
 else:
     servfile='/etc/secrets/pcp-prof-0ca0856baee5.json'
-    othu='http://127.0.0.1/5000'
+    othu='http://127.0.0.1:5000'
 
 with open(servfile, 'r') as fh:
     LOGIN_KEYWORD = json.loads(fh.read())['private_key']
